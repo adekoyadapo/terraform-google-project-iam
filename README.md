@@ -2,7 +2,7 @@
 This module creates a gcp project and assigned groups to with predetermined roles to the project
 
 ## Prerequisite
-The GCP account needed should have an org level access and notably the follwing `ROLE`
+The GCP account needed should have an org level access and notably the following `ROLE`
 
 ```
 ROLE
@@ -10,6 +10,7 @@ roles/owner
 roles/resourcemanager.folderAdmin
 roles/resourcemanager.organizationAdmin
 roles/resourcemanager.projectCreator
+roles/billing.user
 ```
 
 Also the group must exist and already created in google admin console, but neccesarily with members, for users, the user must be specifically invited into the org to avoid errors like
