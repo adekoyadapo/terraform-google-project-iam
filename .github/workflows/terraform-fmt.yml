@@ -1,0 +1,28 @@
+name: Terraform Lint
+
+on:
+  pull_request:
+    paths:
+      - '**.tf'
+      - '**.tfvars'
+    branches:
+      - master
+    tags:        
+      - v*
+
+jobs:
+  terraform-fmt:
+    name: 'Terraform-fmt'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v1
+        with:
+          terraform_version: 1.2.2
+
+      - name: Terraform Format
+        id: fmt
+        run: terraform fmt -check -diff -recursive
