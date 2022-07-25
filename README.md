@@ -36,7 +36,7 @@ Usage
 data "google_client_config" "default" {}
 
 module "prj_iam" {
-  source          = "../gcp-iam-project"
+  source          = "adekoyadapo/project-iam/google"
   name            = "demoprojectiam"
   billing_account = "01XXXX-XXXXXX-XXXXXX"
   org_id          = "1234567890123" # or folder_id = "1234567890123"
